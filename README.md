@@ -2,6 +2,10 @@ sql盲注日志分析工具GUI版本
 
 tshark -r blindsql.pcapng   -Y  "http.request.line" >1.txt 
 
+
+
+![demo](./demo.png)
+
 导出sql日志后，选择合适正则分析即可，正则要根据实际情况修改。
 
 正则规则：要把倒数第一个数和倒数第三个数用括号括起来
@@ -34,5 +38,3 @@ ascii(substr(((select concat_ws(char(94), flag)  from db_flag.tb_flag  limit 0,1
 ```
 
 [参考项目](https://github.com/sqlsec/Sqlmap_Plaintext)
-
-![demo](./demo.png)
