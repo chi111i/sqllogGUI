@@ -10,7 +10,7 @@ tshark -r blindsql.pcapng   -Y  "http.request.line" >1.txt
 
 正则规则：要把倒数第一个数和倒数第三个数用括号括起来
 
-例如：limit 0,1)), **1**, 1))>**100**  正则提取出 1  和   100
+例如：ascii(substr(((select concat_ws(char(94), flag)  from db_flag.tb_flag  limit 0,1)), **1**, 1))>**100**  正则提取出 1  和   100
 
 ![demo2](./demo2.png)
 
